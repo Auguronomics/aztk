@@ -188,6 +188,7 @@ class SshConfig:
         self.job_history_ui_port = '18080'
         self.web_ui_port = '8080'
         self.jupyter_port = '8888'
+        self.zeppelin_port = '9995'        
 
 
     def _read_config_file(self, path: str = aztk_sdk.utils.constants.DEFAULT_SSH_CONFIG_PATH):
@@ -227,6 +228,9 @@ class SshConfig:
 
         if config.get('jupyter_port') is not None:
             self.jupyter_port = config['jupyter_port']
+        
+        if config.get('zeppelin_port') is not None:
+            self.zeppelin_port = config['zeppelin_port']
 
         if config.get('host') is not None:
             self.host = config['host']
@@ -234,7 +238,7 @@ class SshConfig:
         if config.get('connect') is not None:
             self.connect = config['connect']
 
-    def merge(self, cluster_id, username, job_ui_port, job_history_ui_port, web_ui_port, jupyter_port, host, connect):
+    def merge(self, cluster_id, username, job_ui_port, job_history_ui_port, web_ui_port, jupyter_port,zeppelin_port, host, connect):
         """
             Merges fields with args object
         """
@@ -248,6 +252,7 @@ class SshConfig:
                 job_history_ui_port=job_history_ui_port,
                 web_ui_port=web_ui_port,
                 jupyter_port=jupyter_port,
+                zeppelin_port=zeppelin_port,
                 host=host,
                 connect=connect
             )

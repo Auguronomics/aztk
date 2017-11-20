@@ -99,6 +99,7 @@ def generate_cluster_start_task(
     spark_web_ui_port = constants.DOCKER_SPARK_WEB_UI_PORT
     spark_worker_ui_port = constants.DOCKER_SPARK_WORKER_UI_PORT
     spark_jupyter_port = constants.DOCKER_SPARK_JUPYTER_PORT
+    spark_zeppelin_port = constants.DOCKER_SPARK_ZEPPELIN_PORT
     spark_job_ui_port = constants.DOCKER_SPARK_JOB_UI_PORT
 
     # TODO use certificate
